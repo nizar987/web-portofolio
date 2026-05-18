@@ -1,0 +1,14 @@
+{
+  "name": "web-cv",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.29.2",
+  "scripts": {
+    "dev": "pnpm --parallel --filter @web-cv/web --filter @web-cv/api dev",
+    "build": "pnpm --filter @web-cv/api build && pnpm --filter @web-cv/web build",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  }
+}
