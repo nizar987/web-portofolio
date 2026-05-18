@@ -77,6 +77,7 @@ export function Header() {
 
         <a
           className="hidden items-center gap-2 rounded bg-primary-fixed px-4 py-2 font-medium text-on-primary-fixed transition-colors hover:bg-primary-fixed-dim md:flex"
+          download="Muhammad_Nizar_Aulia_CV.docx"
           href={profile.resumeUrl}
         >
           <Download size={18} />

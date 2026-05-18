@@ -7,6 +7,7 @@ import {
   Container,
   Database,
   Github,
+  Instagram,
   Layers3,
   Linkedin,
   Mail,
@@ -96,10 +97,10 @@ export default function Home() {
                     name: <span className="text-tertiary">"{profile.name}"</span>,
                   </p>
                   <p>
-                    focus: <span className="text-tertiary">"full-stack systems"</span>,
+                    focus: <span className="text-tertiary">"scalable backend & architecture"</span>,
                   </p>
                   <p>
-                    stack: <span className="text-tertiary">["Next.js", "NestJS", "Tailwind"]</span>,
+                    stack: <span className="text-tertiary">["Python", "Django", "React"]</span>,
                   </p>
                   <p>
                     location: <span className="text-tertiary">"{profile.location}"</span>
@@ -237,6 +238,10 @@ export default function Home() {
             <a className="flex items-center gap-2 transition-colors hover:text-primary-fixed" href={`mailto:${profile.email}`}>
               <Mail size={16} />
               {profile.email}
+            </a>
+            <a className="flex items-center gap-2 transition-colors hover:text-primary-fixed" href={profile.socials[3].href}>
+              <Instagram size={16} />
+              Instagram
             </a>
           </div>
         </section>
