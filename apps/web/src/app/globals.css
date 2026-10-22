@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,43 +6,69 @@
   color-scheme: dark;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 5rem;
+  background: #0d0d0b;
 }
 
 body {
   min-height: 100vh;
-  background:
-    linear-gradient(rgba(125, 244, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(125, 244, 255, 0.035) 1px, transparent 1px),
-    #101415;
-  background-size: 64px 64px;
-  color: #e0e3e5;
-  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
+  background: #0d0d0b;
+  color: #edeae2;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: rgba(125, 244, 255, 0.28);
-  color: #dbfcff;
+  background: rgba(255, 106, 43, 0.32);
+  color: #edeae2;
 }
 
 :focus-visible {
-  outline: 2px solid #7df4ff;
+  outline: 2px solid #ff6a2b;
   outline-offset: 3px;
+  border-radius: 4px;
 }
 
-@media (max-width: 640px) {
-  body {
-    background-size: 44px 44px;
+/*
+ * Motion gating: `motion-ready` is set by an inline script before paint when the
+ * visitor allows motion. Elements stay hidden only until PageMotion takes over
+ * (`motion-live`); if scripts never hydrate, the fallback animation shows them.
+ */
+.motion-ready [data-reveal],
+.motion-ready [data-reveal-item],
+.motion-ready [data-hero],
+.motion-ready [data-hero-title] {
+  opacity: 0;
+}
+
+.motion-ready:not(.motion-live) [data-reveal],
+.motion-ready:not(.motion-live) [data-reveal-item],
+.motion-ready:not(.motion-live) [data-hero],
+.motion-ready:not(.motion-live) [data-hero-title] {
+  animation: motion-fallback 0.4s ease 2.5s forwards;
+}
+
+@keyframes motion-fallback {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Diagrams scale down with their container; keep labels legible on phones. */
+@media (max-width: 639px) {
+  [data-diagram] text {
+    font-size: 15px;
+  }
+
+  [data-diagram] text[data-compact] {
+    font-size: 12px;
   }
 }
