@@ -1,13 +1,14 @@
 export const portfolio = {
   name: "Muhammad Nizar Aulia",
-  role: "Full Stack Software Engineer",
-  stack: ["Next.js", "NestJS", "Tailwind CSS", "TypeScript", "PostgreSQL", "Docker"],
+  role: "Technical Lead & Software Engineer",
+  location: "West Java, Indonesia",
+  stack: ["Python", "Golang", "Django", "Frappe", "PostgreSQL", "Redis", "React", "Next.js", "AWS", "Docker"],
   projects: [
-    "Operational Dashboard Platform",
-    "Distributed API Gateway",
-    "Finance Workflow Automation"
+    "Scalable Queue Microservice",
+    "Enterprise WMS Migration",
+    "Operational Workflow Automation"
   ],
   contact: {
-    email: "hello@nizaraulia.dev"
+    email: "nizar.aulia90@gmail.com"
   }
 };
